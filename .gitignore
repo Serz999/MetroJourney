@@ -1,3 +1,8 @@
+/__pycache__/
+/src/tests/__pycache__/
+/src/metro_journey/__pycache__/
+
 /.idea
-/poetry.lock
+
 /venv/
+/poetry.lock
