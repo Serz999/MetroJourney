@@ -21,9 +21,10 @@ def build_metro()->tuple:
                 curr[prev_name] = branch['hex_color']
             prev_name = station['name']
             prev = curr 
-        if branch['hex_color'] == '915133':
+        circulars = ['915133', 'CC4C6E', '88CDCF']
+        if branch['hex_color'] in circulars:
             first = branch['stations'][0]['name']
-            last = branch['stations'][len(branch['stations']) - 1]['name']
-            metro[first] = {first: '915133'}
-            metro[last] = {last: '915133'}
+            last = branch['stations'][-1]['name']
+            metro[first].update({last: branch['hex_color']})
+            metro[last].update({first: branch['hex_color']})
     return (metro)
